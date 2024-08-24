@@ -3,6 +3,7 @@ import { useQuill } from 'react-quilljs';
 import * as Y from 'yjs';
 import { QuillBinding } from 'y-quill';
 import 'quill/dist/quill.snow.css';
+import './css/editor.css'
 
 function Editor() {
     const { quill, quillRef } = useQuill();
@@ -25,13 +26,13 @@ function Editor() {
     }, [quill, ytext]);
 
     return (
-        <div>
-            <h1>Text Editor</h1>
-            <div style={{ display: 'flex' }}>
-                <div style={{ width: '100%', height: 300 }}>
-                    <div ref={quillRef} />
-                </div>
+        <div className="editor">
+            <div className="editor-container">
+                <h1 className="editor-title">Text Editor</h1>
+                <div className="editor-wrapper">
+                <div ref={quillRef} />
             </div>
+        </div>
         </div>
     );
 }
